@@ -1,0 +1,116 @@
+.has-error {
+    border-color: red;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+/* to nie jest mobile-first! */
+/* 
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: greenyellow;
+}
+
+@media (max-width: 600px) {
+    .square {
+        background-color: palevioletred;
+    }
+} */
+
+
+/* mobile first! */
+
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: palevioletred;
+    transition: all 0.5s ease;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+    .square {
+        background-color: greenyellow;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 800px) {
+    .square {
+        background-color: aqua;
+        border-radius: 50%;
+    }
+}
+
+/* 
+display: inline
+
+element przyjmuje szerokosc i wysokosc dzieci (najwiekszego i najszerszego) , ktore go wypelniaja. Nawet jesli nadasz mu wysokosc i szerokosc w css, to i tak zawsze bedzie mia szerokosc i wysokosc swoich dzieci. Dwa elementy majace display inline ustawia sie obok siebie ( jesli bedzie miejsce)
+
+*/
+
+/* 
+display: inline-block
+
+Dwa elementy majace display inline-block ustawia sie obok siebie ( jesli bedzie miejsce).
+Jesli nie ma dzieci i nie ma nadanego heigth i width, bedzie mial szerokosc i wysokosc zero.
+jesli nie ma nadanej wysokosci i szerokosci i ma dzieci - przyjmie szerokosc i wysokosc dzieci (najwiekszego i najszerszego) 
+Moge mu napisac wysokosc i szerokosc i ona bedzie respektowana. Wymiary jakie sami mu nadamy maja wiekszy priorytet niz jego dzieci. 
+
+*/
+
+/* 
+display: block
+
+Element z automatu zawsze ma 100% szerokosci.
+Moge mu ustawic wysokosc i szerokosc. Nigdy nie przyjmuje  szerokosci swoich dzieci - albo 100% albo to co sama nadam.
+Dwa elementy z display block beda sie z automatu ustawiac pod soba.
+
+*/
+
+/* FLEXBOX */
+
+/* 
+problem bez flexbox - centrowanie elementow w innym elemencie
+*/
+
+.wrapper {
+    height: 500px;
+    width: 500px;
+    background-color: bisque;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: aquamarine;
+    transform: translate(-50%);
+}
+
+.wrapper-flexbox {
+    height: 500px;
+    width: 500px;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.text-flexbox {
+    background-color: aquamarine;
+}
